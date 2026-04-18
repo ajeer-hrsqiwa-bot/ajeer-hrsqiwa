@@ -5,37 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajeer - Verification Portal</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; direction: rtl; }
+        /* কালার এবং মেইন বডি সেটআপ */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f1f4f9; /* হালকা নীলচে ব্যাকগ্রাউন্ড */
+            margin: 0; 
+            padding: 0; 
+            direction: rtl; 
+        }
         
-        /* Header Logo Section */
-        .top-nav { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .logo-top { height: 50px; } /* লোগোর সাইজ */
-        .btn-blue { background: #1a237e; color: white; padding: 6px 15px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold; }
+        /* Header */
+        .top-nav { 
+            background: white; 
+            padding: 8px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #e1e8ef;
+        }
+        .logo-top { height: 45px; } 
+        .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #5d6d7e; }
+        .btn-blue { background: #1a237e; color: white; padding: 7px 18px; border-radius: 4px; text-decoration: none; font-weight: bold; }
 
-        .main-title { text-align: center; margin: 35px 0; color: #2c3e50; font-size: 24px; font-weight: bold; }
+        /* Title */
+        .main-title { text-align: center; margin: 30px 0; color: #1a237e; font-size: 22px; font-weight: bold; }
 
-        /* Cards Layout - হুবহু পাশাপাশি */
-        .container { display: flex; flex-direction: row; justify-content: center; gap: 20px; padding: 0 5%; max-width: 1200px; margin: auto; }
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 32%; padding: 25px; box-sizing: border-box; }
-        .card-title { color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; font-size: 18px; text-align: center; font-weight: bold; }
+        /* Container & Cards (হুবহু পাশাপাশি ৩টি বক্স) */
+        .container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            padding: 0 4%; 
+            max-width: 1300px; 
+            margin: auto; 
+        }
+        .card { 
+            background: white; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04); 
+            width: 33.33%; 
+            padding: 25px; 
+            box-sizing: border-box;
+            border: 1px solid #f0f4f8;
+        }
+        .card-title { 
+            color: #1a237e; 
+            border-bottom: 1px solid #f0f4f8; 
+            padding-bottom: 15px; 
+            margin-bottom: 20px; 
+            font-size: 18px; 
+            text-align: right; 
+            font-weight: bold; 
+        }
         
-        .info-row { margin-bottom: 15px; text-align: right; }
-        .label { color: #7f8c8d; font-size: 12px; margin-bottom: 4px; display: block; }
-        .value { color: #2c3e50; font-weight: 600; font-size: 14px; }
-        .status-badge { background: #e8f5e9; color: #2e7d32; padding: 3px 12px; border-radius: 4px; font-size: 12px; display: inline-block; }
+        .info-row { margin-bottom: 15px; text-align: left; } /* বামে এলাইন করার জন্য */
+        .label { color: #8a99a8; font-size: 11px; margin-bottom: 3px; display: block; text-align: left; }
+        .value { color: #2c3e50; font-weight: 600; font-size: 14px; text-align: left; display: block; }
+        
+        /* Status Badge */
+        .status-badge { 
+            background: #e9f7ef; 
+            color: #27ae60; 
+            padding: 2px 15px; 
+            border-radius: 4px; 
+            font-size: 12px; 
+            display: inline-block;
+            margin-top: 5px;
+        }
 
         /* Blue Bar */
-        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 12px; margin: 40px 5% 20px 5%; border-radius: 4px; font-size: 14px; }
+        .blue-bar { 
+            background: #1a237e; 
+            color: white; 
+            text-align: center; 
+            padding: 12px; 
+            margin: 40px auto; 
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 5px; 
+            font-size: 14px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
 
-        /* Footer Section with Logos */
-        .footer { background: #f9f9f9; padding: 20px 5%; border-top: 1px solid #eee; margin-top: 50px; }
+        /* Footer */
+        .footer { 
+            background: white; 
+            padding: 15px 5%; 
+            border-top: 1px solid #e1e8ef; 
+            margin-top: 50px;
+        }
         .footer-content { display: flex; justify-content: space-between; align-items: center; }
-        .footer-logos { display: flex; align-items: center; gap: 30px; }
-        .logo-footer { height: 40px; }
-        .footer-links { font-size: 12px; color: #666; display: flex; gap: 20px; }
+        .footer-logos { display: flex; align-items: center; gap: 20px; }
+        .logo-footer { height: 35px; }
+        .footer-links { font-size: 12px; color: #5d6d7e; display: flex; gap: 20px; align-items: center; }
 
-        /* Floating Help Button */
-        .help-btn { position: fixed; bottom: 20px; right: 20px; background: #1a237e; color: white; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        /* Help Button */
+        .help-btn { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: #1a237e; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 50px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            font-size: 14px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+            z-index: 999;
+        }
 
         @media (max-width: 900px) { .container { flex-direction: column; align-items: center; } .card { width: 100%; } }
     </style>
@@ -43,11 +125,11 @@
 <body>
 
     <div class="top-nav">
-        <img src="ajeer_logo.png" alt="Ajeer Logo" class="logo-top"> 
-        <div style="display: flex; align-items: center; gap: 20px;">
-            <span style="font-size: 13px; color: #555;">English</span>
-            <span style="font-size: 13px; color: #555;">مركز المعرفة</span>
-            <span style="font-size: 13px; color: #555;">تسجيل الدخول</span>
+        <img src="ajeer_logo.png" alt="Ajeer" class="logo-top"> 
+        <div class="nav-links">
+            <span>English</span>
+            <span>مركز المعرفة</span>
+            <span>تسجيل الدخول</span>
             <a href="#" class="btn-blue">سجل الآن</a>
         </div>
     </div>
@@ -100,20 +182,22 @@
         </div>
     </div>
 
-    <div class="blue-bar">نسখ رابط الصفحة 🔗</div>
+    <div class="blue-bar">
+        <span>🔗</span> نسخ رابط الصفحة
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logos">
                 <img src="takamol_logo.png" alt="Takamol" class="logo-footer">
-                <img src="hr_logo.png" alt="Ministry of HR" class="logo-footer">
+                <img src="hr_logo.png" alt="HR" class="logo-footer">
             </div>
             <div class="footer-links">
                 <span>© 1447هـ / أجير</span>
                 <span>English</span>
                 <span>الشروط والأحكام</span>
                 <span>سياسات الخصوصية</span>
-                <img src="ajeer_logo_small.png" alt="Ajeer" style="height: 30px;">
+                <img src="ajeer_logo.png" alt="Ajeer" style="height: 25px;">
             </div>
         </div>
     </footer>
