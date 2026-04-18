@@ -6,32 +6,45 @@
     <title>Ajeer - Verification Portal</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f4f9; margin: 0; padding: 0; direction: rtl; }
-        .top-nav { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e1e8ef; }
+        .top-nav { background: white; padding: 12px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e1e8ef; }
+        
+        /* Ajeer Logo SVG Styling */
+        .ajeer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .ajeer-text { color: #1a237e; font-weight: bold; font-size: 20px; letter-spacing: 1px; }
+
         .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #5d6d7e; }
-        .btn-blue { background: #1a237e; color: white; padding: 7px 18px; border-radius: 4px; text-decoration: none; font-weight: bold; }
-        .main-title { text-align: center; margin: 30px 0; color: #1a237e; font-size: 22px; font-weight: bold; }
-        .container { display: flex; justify-content: center; gap: 15px; padding: 0 4%; max-width: 1300px; margin: auto; }
-        .card { background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); width: 33.33%; padding: 25px; box-sizing: border-box; border: 1px solid #f0f4f8; }
-        .card-title { color: #1a237e; border-bottom: 1px solid #f0f4f8; padding-bottom: 15px; margin-bottom: 20px; font-size: 18px; text-align: right; font-weight: bold; }
-        .info-row { margin-bottom: 15px; text-align: right; }
-        .label { color: #8a99a8; font-size: 11px; margin-bottom: 3px; display: block; }
-        .value { color: #2c3e50; font-weight: 600; font-size: 14px; display: block; }
-        .status-badge { background: #e9f7ef; color: #27ae60; padding: 2px 15px; border-radius: 4px; font-size: 12px; display: inline-block; }
-        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 12px; margin: 40px auto; width: 90%; max-width: 1200px; border-radius: 5px; font-size: 14px; }
-        .footer { background: white; padding: 20px 5%; border-top: 1px solid #e1e8ef; margin-top: 50px; }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: auto; }
-        .help-btn { position: fixed; bottom: 20px; left: 20px; background: #1a237e; color: white; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000; }
-        svg { vertical-align: middle; }
+        .btn-blue { background: #1a237e; color: white; padding: 8px 22px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .main-title { text-align: center; margin: 40px 0; color: #1a237e; font-size: 24px; font-weight: bold; }
+        
+        .container { display: flex; justify-content: center; gap: 20px; padding: 0 5%; max-width: 1250px; margin: auto; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 33%; padding: 30px; border: 1px solid #f0f4f8; }
+        .card-title { color: #1a237e; border-bottom: 1px solid #f0f4f8; padding-bottom: 15px; margin-bottom: 20px; font-size: 19px; font-weight: bold; }
+        
+        .info-row { margin-bottom: 18px; text-align: right; }
+        .label { color: #8a99a8; font-size: 12px; margin-bottom: 4px; display: block; }
+        .value { color: #2c3e50; font-weight: 600; font-size: 15px; display: block; }
+        .status-badge { background: #e9f7ef; color: #27ae60; padding: 3px 18px; border-radius: 4px; font-size: 13px; font-weight: bold; }
+        
+        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 14px; margin: 45px auto; width: 88%; max-width: 1100px; border-radius: 6px; font-size: 15px; cursor: pointer; }
+        
+        .footer { background: white; padding: 25px 6%; border-top: 1px solid #e1e8ef; margin-top: 60px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: auto; }
+        
+        .help-btn { position: fixed; bottom: 30px; left: 30px; background: #1a237e; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
+
+        @media (max-width: 900px) { .container { flex-direction: column; } .card { width: 100%; } }
     </style>
 </head>
 <body>
 
     <div class="top-nav">
-        <svg width="100" height="40" viewBox="0 0 100 40">
-            <path d="M10 10h10v20h-10z" fill="#1a237e"/>
-            <path d="M25 10h30v5h-30z" fill="#27ae60"/>
-            <text x="10" y="35" font-family="Arial" font-size="12" fill="#1a237e" font-weight="bold">AJEER</text>
-        </svg>
+        <div class="ajeer-logo">
+            <svg width="40" height="30" viewBox="0 0 40 30">
+                <rect x="5" y="5" width="30" height="20" rx="2" fill="#1a237e" />
+                <rect x="10" y="12" width="20" height="4" fill="#27ae60" />
+            </svg>
+            <span class="ajeer-text">أجير</span>
+        </div>
         <div class="nav-links">
             <span>English</span>
             <span>مركز المعرفة</span>
@@ -46,12 +59,12 @@
         <div class="card">
             <div class="card-title">معلومات التصريح</div>
             <div class="info-row"><span class="label">اسم الموظف:</span><span class="value">AMIR KHAN</span></div>
-            <div class="info-row"><span class="label">حالة التصريح:</span><div><span class="status-badge">فعال</span></div></div>
+            <div class="info-row"><span class="label">حالة التصريح:</span><div><span class="status-badge">فعাল</span></div></div>
             <div class="info-row"><span class="label">تاريخ بداية التصريح:</span><span class="value">2026-04-18</span></div>
             <div class="info-row"><span class="label">تاريخ نهاية التصريح:</span><span class="value">2027-04-17</span></div>
         </div>
         <div class="card">
-            <div class="card-title">المنشأة المستفيدة</div>
+            <div class="card-title">المنশأة المستفيدة</div>
             <div class="info-row"><span class="label">اسم المنشأة:</span><span class="value">مؤسسة ترحيب حرب ناعم العتيبي للمقاولات</span></div>
             <div class="info-row"><span class="label">رقم المنشأة:</span><span class="value">1-2750063</span></div>
         </div>
@@ -66,14 +79,14 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div style="display: flex; gap: 15px;">
-                <svg width="120" height="35" viewBox="0 0 120 35">
-                    <rect width="120" height="35" fill="#f8f9fa" rx="4"/>
-                    <text x="10" y="22" font-family="Arial" font-size="10" fill="#27ae60">Ministry of HR</text>
-                </svg>
-                <svg width="80" height="35" viewBox="0 0 80 35">
-                    <text x="5" y="22" font-family="Arial" font-size="12" fill="#1a237e" font-weight="bold">Takamol</text>
-                </svg>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div style="background:#f8f9fa; padding: 5px 15px; border-radius: 4px; border:1px solid #eee; display: flex; align-items: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="#27ae60"/></svg>
+                    <span style="font-size: 11px; color: #1a237e; font-weight: bold;">وزارة الموارد البشرية</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="font-weight: bold; color: #1a237e;">تكامل | Takamol</span>
+                </div>
             </div>
             <div style="display: flex; align-items: center; gap: 20px; font-size: 12px; color: #5d6d7e;">
                 <span>© 1447هـ / أجير</span>
@@ -84,7 +97,10 @@
         </div>
     </footer>
 
-    <div class="help-btn"><span>?</span> <span>مساعدة</span></div>
+    <div class="help-btn">
+        <span>?</span>
+        <span>مساعدة</span>
+    </div>
 
 </body>
 </html>
