@@ -7,99 +7,98 @@
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #f1f4f9; 
+            background-color: #f8fafc; 
             margin: 0; padding: 0; direction: rtl; 
         }
         
         /* Header */
         .top-nav { 
-            background: white; padding: 10px 5%; 
+            background: white; padding: 12px 6%; 
             display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 1px solid #e1e8ef;
+            border-bottom: 1px solid #edf2f7;
         }
-        .logo-top { height: 40px; width: auto; } 
-        .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #5d6d7e; }
-        .btn-blue { background: #1a237e; color: white; padding: 7px 18px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        .logo-top { height: 32px; width: auto; object-fit: contain; } 
+        .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #4a5568; }
+        .btn-blue { background: #1a237e; color: white; padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: 600; }
 
-        .main-title { text-align: center; margin: 30px 0; color: #1a237e; font-size: 22px; font-weight: bold; }
+        .main-title { text-align: center; margin: 40px 0; color: #1a237e; font-size: 24px; font-weight: 700; }
 
         /* Container & Cards */
         .container { 
-            display: flex; flex-direction: row; justify-content: center; gap: 15px; 
-            padding: 0 4%; max-width: 1300px; margin: auto; 
+            display: flex; flex-direction: row; justify-content: center; gap: 20px; 
+            padding: 0 5%; max-width: 1200px; margin: auto; 
         }
         .card { 
-            background: white; border-radius: 10px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04); 
-            width: 33.33%; padding: 25px; box-sizing: border-box;
-            border: 1px solid #f0f4f8;
+            background: white; border-radius: 12px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); 
+            width: 32%; padding: 30px; box-sizing: border-box;
+            border: 1px solid #f1f5f9;
         }
         .card-title { 
-            color: #1a237e; border-bottom: 1px solid #f0f4f8; 
+            color: #1a237e; border-bottom: 2px solid #f8fafc; 
             padding-bottom: 15px; margin-bottom: 20px; 
             font-size: 18px; text-align: right; font-weight: bold; 
         }
         
-        /* তথ্যগুলো ডান পাশে এলাইন করার জন্য */
-        .info-row { margin-bottom: 15px; text-align: right; }
-        .label { color: #8a99a8; font-size: 11px; margin-bottom: 3px; display: block; }
-        .value { color: #2c3e50; font-weight: 600; font-size: 14px; display: block; }
+        .info-row { margin-bottom: 18px; text-align: right; }
+        .label { color: #94a3b8; font-size: 12px; margin-bottom: 4px; display: block; }
+        .value { color: #1e293b; font-weight: 600; font-size: 15px; display: block; }
         
         .status-badge { 
-            background: #e9f7ef; color: #27ae60; 
-            padding: 2px 15px; border-radius: 4px; font-size: 12px; 
-            display: inline-block; margin-top: 5px;
+            background: #f0fdf4; color: #16a34a; 
+            padding: 4px 16px; border-radius: 6px; font-size: 13px; 
+            display: inline-block; font-weight: 600;
         }
 
         .blue-bar { 
             background: #1a237e; color: white; text-align: center; 
-            padding: 12px; margin: 40px auto; width: 90%;
-            max-width: 1200px; border-radius: 5px; font-size: 14px; 
-            display: flex; justify-content: center; align-items: center; gap: 10px;
+            padding: 14px; margin: 50px auto; width: 85%;
+            max-width: 1100px; border-radius: 8px; font-size: 15px; 
+            display: flex; justify-content: center; align-items: center; gap: 12px;
+            cursor: pointer;
         }
 
         /* Footer */
         .footer { 
-            background: white; padding: 20px 5%; 
-            border-top: 1px solid #e1e8ef; margin-top: 50px;
+            background: white; padding: 25px 6%; 
+            border-top: 1px solid #edf2f7; margin-top: 60px;
         }
         .footer-content { 
             display: flex; justify-content: space-between; align-items: center; 
-            max-width: 1400px; margin: auto;
+            max-width: 1300px; margin: auto;
         }
-        .footer-logos-right { display: flex; align-items: center; gap: 20px; }
-        .logo-footer { height: 35px; width: auto; }
+        .footer-logos-right { display: flex; align-items: center; gap: 25px; }
+        .logo-footer { height: 35px; width: auto; object-fit: contain; }
         
-        /* ফুটার লিংকগুলো মাঝখানে এবং বামে */
-        .footer-left { display: flex; align-items: center; gap: 20px; font-size: 12px; color: #5d6d7e; }
+        .footer-left { display: flex; align-items: center; gap: 25px; font-size: 13px; color: #64748b; }
 
-        /* Floating Help Button - এটিকে বাম পাশে ফিক্সড করা হয়েছে */
+        /* Help Button */
         .help-btn { 
-            position: fixed; bottom: 20px; left: 20px; /* এখানে left ব্যবহার করা হয়েছে */
-            background: #1a237e; color: white; padding: 10px 20px; 
+            position: fixed; bottom: 30px; left: 30px; 
+            background: #1a237e; color: white; padding: 12px 24px; 
             border-radius: 50px; display: flex; align-items: center; 
-            gap: 8px; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+            gap: 10px; font-size: 15px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2); 
             z-index: 1000; cursor: pointer;
         }
 
         @media (max-width: 900px) { 
-            .container { flex-direction: column-reverse; align-items: center; } 
+            .container { flex-direction: column; align-items: center; } 
             .card { width: 100%; } 
-            .footer-content { flex-direction: column; gap: 20px; }
+            .footer-content { flex-direction: column; gap: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-nav">
-        <img src="https://i.ibb.co/X7WfWbH/ajeer-logo.png" alt="Ajeer" class="logo-top"> 
+    <nav class="top-nav">
+        <img src="https://www.qiwa.sa/themes/custom/qiwa/logo.svg" alt="Ajeer" class="logo-top"> 
         <div class="nav-links">
             <span>English</span>
             <span>مركز المعرفة</span>
             <span>تسجيل الدخول</span>
             <a href="#" class="btn-blue">سجل الآن</a>
         </div>
-    </div>
+    </nav>
 
     <div class="main-title">تصريح أجير لحلول الموارد البشرية</div>
 
@@ -107,7 +106,7 @@
         <div class="card">
             <div class="card-title">معلومات التصريح</div>
             <div class="info-row">
-                <span class="label">اسم الموظف:</span>
+                <span class="label">اسم الموظফ:</span>
                 <span class="value">AMIR KHAN</span>
             </div>
             <div class="info-row">
@@ -156,16 +155,16 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logos-right">
-                <img src="https://i.ibb.co/pLgB5tP/takamol-logo.png" alt="Takamol" class="logo-footer">
-                <img src="https://i.ibb.co/jR07K5X/hr-logo.png" alt="HR" class="logo-footer">
+                <img src="https://www.hrsd.gov.sa/themes/custom/hrsd/logo.svg" alt="HRSD" class="logo-footer">
+                <img src="https://www.qiwa.sa/themes/custom/qiwa/logo.svg" alt="Qiwa" class="logo-footer">
             </div>
 
             <div class="footer-left">
                 <span>© 1447هـ / أجير</span>
                 <span>English</span>
-                <span>الشروط والأحكام</span>
+                <span>الشروط والأহকাম</span>
                 <span>سياسات الخصوصية</span>
-                <img src="https://i.ibb.co/X7WfWbH/ajeer-logo.png" alt="Ajeer" style="height: 25px;">
+                <img src="https://www.qiwa.sa/themes/custom/qiwa/logo.svg" alt="Ajeer" style="height: 22px;">
             </div>
         </div>
     </footer>
