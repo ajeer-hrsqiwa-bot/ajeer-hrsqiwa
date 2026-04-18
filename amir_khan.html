@@ -7,33 +7,41 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f4f9; margin: 0; padding: 0; direction: rtl; }
         .top-nav { background: white; padding: 12px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e1e8ef; }
+        
+        /* Text-based Ajeer Logo */
+        .ajeer-logo { color: #1a237e; font-size: 24px; font-weight: bold; display: flex; align-items: center; gap: 6px; text-decoration: none; }
+        .logo-box { width: 12px; height: 12px; background: #27ae60; border-radius: 2px; }
+
         .nav-links { display: flex; align-items: center; gap: 20px; font-size: 13px; color: #5d6d7e; }
         .btn-blue { background: #1a237e; color: white; padding: 8px 22px; border-radius: 4px; text-decoration: none; font-weight: bold; }
+        
         .main-title { text-align: center; margin: 40px 0; color: #1a237e; font-size: 24px; font-weight: bold; }
         .container { display: flex; justify-content: center; gap: 20px; padding: 0 5%; max-width: 1300px; margin: auto; }
-        .card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 33%; padding: 30px; border: 1px solid #f0f4f8; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 33%; padding: 30px; border: 1px solid #f0f4f8; box-sizing: border-box; }
         .card-title { color: #1a237e; border-bottom: 2px solid #f1f4f9; padding-bottom: 15px; margin-bottom: 20px; font-size: 19px; font-weight: bold; }
+        
         .info-row { margin-bottom: 18px; text-align: right; }
         .label { color: #8a99a8; font-size: 12px; margin-bottom: 4px; display: block; }
         .value { color: #2c3e50; font-weight: 600; font-size: 15px; display: block; }
         .status-badge { background: #e9f7ef; color: #27ae60; padding: 3px 18px; border-radius: 4px; font-size: 13px; font-weight: bold; display: inline-block; }
-        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 14px; margin: 45px auto; width: 90%; max-width: 1100px; border-radius: 6px; font-size: 15px; }
+        
+        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 14px; margin: 45px auto; width: 90%; max-width: 1100px; border-radius: 6px; font-size: 15px; cursor: pointer; }
+        
         .footer { background: white; padding: 25px 6%; border-top: 1px solid #e1e8ef; margin-top: 60px; }
         .footer-content { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: auto; }
-        .help-btn { position: fixed; bottom: 30px; left: 30px; background: #1a237e; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
+        .footer-logos { display: flex; align-items: center; gap: 20px; }
+        .takamol-text { color: #1a237e; font-weight: bold; font-size: 16px; border-left: 1px solid #ddd; padding-left: 15px; }
+        .ministry-text { color: #27ae60; font-size: 12px; font-weight: bold; }
+        
+        .help-btn { position: fixed; bottom: 30px; left: 30px; background: #1a237e; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-size: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; }
+
         @media (max-width: 900px) { .container { flex-direction: column; } .card { width: 100%; } }
     </style>
 </head>
 <body>
 
     <div class="top-nav">
-        <div style="display: flex; align-items: center; gap: 8px;">
-            <svg width="40" height="30" viewBox="0 0 40 30">
-                <rect width="40" height="30" rx="4" fill="#1a237e"/>
-                <rect x="8" y="12" width="24" height="6" rx="1" fill="#27ae60"/>
-            </svg>
-            <span style="color:#1a237e; font-size: 24px; font-weight: bold;">أجير</span>
-        </div>
+        <div class="ajeer-logo">أجير <div class="logo-box"></div></div>
         <div class="nav-links">
             <span>English</span>
             <span>مركز المعرفة</span>
@@ -54,12 +62,12 @@
         </div>
         <div class="card">
             <div class="card-title">المنشأة المستفيدة</div>
-            <div class="info-row"><span class="label">اسم المنشأة:</span><span class="value">مؤسسة ترحيب حرب ناعم العتيبي للمقاولাত</span></div>
+            <div class="info-row"><span class="label">اسم المنشأة:</span><span class="value">مؤسسة ترحيب حرب ناعم العتيبي للمقاولات</span></div>
             <div class="info-row"><span class="label">رقم المنشأة:</span><span class="value">1-2750063</span></div>
         </div>
         <div class="card">
             <div class="card-title">شركة الإستقدام</div>
-            <div class="info-row"><span class="label">اسم المنشأة:</span><span class="value">مؤسسة ضياء الرياض للمقاولات</span></div>
+            <div class="info-row"><span class="label">اسم المنشأة:</span><span class="value">مؤسسة ضياء الرياض للمقاولাত</span></div>
             <div class="info-row"><span class="label">رقم المنشأة:</span><span class="value">2-708988</span></div>
         </div>
     </div>
@@ -68,10 +76,9 @@
 
     <footer class="footer">
         <div class="footer-content">
-            <div style="display: flex; gap: 20px; align-items: center;">
-                <span style="color:#1a237e; font-weight: bold; font-size: 16px;">تكامل | Takamol</span>
-                <div style="width: 1px; height: 20px; background: #ddd;"></div>
-                <span style="color:#27ae60; font-size: 12px; font-weight: bold;">وزارة الموارد البشرية والتنمية الاجتماعية</span>
+            <div class="footer-logos">
+                <span class="takamol-text">Takamol | تکامل</span>
+                <span class="ministry-text">وزارة الموارد البشرية والتنمية الاجتماعية</span>
             </div>
             <div style="display: flex; align-items: center; gap: 20px; font-size: 12px; color: #5d6d7e;">
                 <span>© 1447هـ / أجير</span>
@@ -82,7 +89,7 @@
         </div>
     </footer>
 
-    <div class="help-btn"><span>?</span> <span>مساعدة</span></div>
+    <a href="#" class="help-btn"><span>?</span> <span>مساعدة</span></a>
 
 </body>
 </html>
