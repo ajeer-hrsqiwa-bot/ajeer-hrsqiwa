@@ -3,94 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajeer - Verification</title>
+    <title>Ajeer - Verification Portal</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; direction: rtl; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; margin: 0; padding: 0; direction: rtl; }
         
-        /* Navbar */
-        .navbar { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .btn-register { background: #1a237e; color: white; padding: 6px 15px; border-radius: 4px; text-decoration: none; font-size: 13px; }
+        /* Header Logo Section */
+        .top-nav { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo-top { height: 50px; } /* লোগোর সাইজ */
+        .btn-blue { background: #1a237e; color: white; padding: 6px 15px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold; }
 
-        /* Page Title */
-        .page-title { text-align: center; margin: 30px 0; color: #2c3e50; font-size: 22px; font-weight: bold; }
+        .main-title { text-align: center; margin: 35px 0; color: #2c3e50; font-size: 24px; font-weight: bold; }
 
-        /* Cards Container - পাশাপাশি রাখার জন্য */
-        .container { 
-            display: flex; 
-            flex-direction: row; /* পাশাপাশি রাখার জন্য */
-            flex-wrap: nowrap; /* যাতে নিচে না নেমে যায় */
-            justify-content: center; 
-            gap: 15px; 
-            padding: 0 2%; 
-            max-width: 1200px; 
-            margin: auto; 
-        }
-
-        /* Single Card */
-        .card { background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); width: 32%; min-height: 250px; padding: 20px; border: 1px solid #eef; box-sizing: border-box; }
-        .card-title { color: #2c3e50; border-bottom: 2px solid #f7f7f7; padding-bottom: 12px; margin-bottom: 20px; font-size: 16px; text-align: center; font-weight: bold; }
-        .info-group { margin-bottom: 15px; }
-        .label { color: #889; font-size: 12px; display: block; margin-bottom: 4px; }
-        .value { color: #2c3e50; font-weight: 600; font-size: 13px; display: block; }
+        /* Cards Layout - হুবহু পাশাপাশি */
+        .container { display: flex; flex-direction: row; justify-content: center; gap: 20px; padding: 0 5%; max-width: 1200px; margin: auto; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); width: 32%; padding: 25px; box-sizing: border-box; }
+        .card-title { color: #2c3e50; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; font-size: 18px; text-align: center; font-weight: bold; }
+        
+        .info-row { margin-bottom: 15px; text-align: right; }
+        .label { color: #7f8c8d; font-size: 12px; margin-bottom: 4px; display: block; }
+        .value { color: #2c3e50; font-weight: 600; font-size: 14px; }
         .status-badge { background: #e8f5e9; color: #2e7d32; padding: 3px 12px; border-radius: 4px; font-size: 12px; display: inline-block; }
 
         /* Blue Bar */
-        .action-bar { background: #1a237e; color: white; text-align: center; padding: 12px; margin: 40px 5%; border-radius: 4px; font-size: 14px; }
+        .blue-bar { background: #1a237e; color: white; text-align: center; padding: 12px; margin: 40px 5% 20px 5%; border-radius: 4px; font-size: 14px; }
 
-        /* Footer with Logos */
-        .footer { background: #f9f9f9; padding: 20px 5%; border-top: 1px solid #eee; }
-        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .footer-links { display: flex; gap: 20px; font-size: 12px; color: #666; }
-        .footer-logos { display: flex; align-items: center; gap: 20px; }
-        .logo-placeholder { font-weight: bold; color: #1a237e; }
+        /* Footer Section with Logos */
+        .footer { background: #f9f9f9; padding: 20px 5%; border-top: 1px solid #eee; margin-top: 50px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; }
+        .footer-logos { display: flex; align-items: center; gap: 30px; }
+        .logo-footer { height: 40px; }
+        .footer-links { font-size: 12px; color: #666; display: flex; gap: 20px; }
 
-        /* Floating Help Button (নীল গোল বাটন) */
-        .help-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #1a237e;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            cursor: pointer;
-            z-index: 1000;
-        }
+        /* Floating Help Button */
+        .help-btn { position: fixed; bottom: 20px; right: 20px; background: #1a237e; color: white; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-size: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
 
-        /* Mobile View (মোবাইলে একটির নিচে একটি আসবে) */
-        @media (max-width: 900px) {
-            .container { flex-direction: column; align-items: center; }
-            .card { width: 90%; margin-bottom: 15px; }
-        }
+        @media (max-width: 900px) { .container { flex-direction: column; align-items: center; } .card { width: 100%; } }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div style="font-weight: bold; font-size: 20px; color: #1a237e;">أجير</div>
-        <div style="display: flex; gap: 15px; font-size: 12px;">
-            <span>English</span>
-            <span>مركز المعرفة</span>
-            <span>تسجيل الدخول</span>
-            <a href="#" class="btn-register">سجل الآن</a>
+    <div class="top-nav">
+        <img src="ajeer_logo.png" alt="Ajeer Logo" class="logo-top"> 
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <span style="font-size: 13px; color: #555;">English</span>
+            <span style="font-size: 13px; color: #555;">مركز المعرفة</span>
+            <span style="font-size: 13px; color: #555;">تسجيل الدخول</span>
+            <a href="#" class="btn-blue">سجل الآن</a>
         </div>
     </div>
 
-    <div class="page-title">تصريح أجير لحلول الموارد البشرية</div>
+    <div class="main-title">تصريح أجير لحلول الموارد البشرية</div>
 
     <div class="container">
         <div class="card">
             <div class="card-title">شركة الإستقدام</div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">اسم المنشأة:</span>
                 <span class="value">مؤسسة ضياء الرياض للمقاولات</span>
             </div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">رقم المنشأة:</span>
                 <span class="value">2-708988</span>
             </div>
@@ -98,11 +69,11 @@
 
         <div class="card">
             <div class="card-title">المنشأة المستفيدة</div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">اسم المنشأة:</span>
                 <span class="value">مؤسسة ترحيب حرب ناعم العتيبي للمقاولات</span>
             </div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">رقم المنشأة:</span>
                 <span class="value">1-2750063</span>
             </div>
@@ -110,44 +81,44 @@
 
         <div class="card">
             <div class="card-title">معلومات التصريح</div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">اسم الموظف:</span>
                 <span class="value">AMIR KHAN</span>
             </div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">حالة التصريح:</span>
                 <div><span class="status-badge">فعال</span></div>
             </div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">تاريخ بداية التصريح:</span>
                 <span class="value">2026-04-18</span>
             </div>
-            <div class="info-group">
+            <div class="info-row">
                 <span class="label">تاريخ نهاية التصريح:</span>
                 <span class="value">2027-04-17</span>
             </div>
         </div>
     </div>
 
-    <div class="action-bar">نسخ رابط الصفحة 🔗</div>
+    <div class="blue-bar">نسখ رابط الصفحة 🔗</div>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logos">
-                <span class="logo-placeholder">Takamol | تكامل</span>
-                <span style="font-size: 10px; color: #aaa;">|</span>
-                <span class="logo-placeholder" style="font-size: 12px;">وزارة الموارد البشرية</span>
+                <img src="takamol_logo.png" alt="Takamol" class="logo-footer">
+                <img src="hr_logo.png" alt="Ministry of HR" class="logo-footer">
             </div>
             <div class="footer-links">
-                <span>سياسات الخصوصية</span>
-                <span>الشروط والأحكام</span>
-                <span>English</span>
                 <span>© 1447هـ / أجير</span>
+                <span>English</span>
+                <span>الشروط والأحكام</span>
+                <span>سياسات الخصوصية</span>
+                <img src="ajeer_logo_small.png" alt="Ajeer" style="height: 30px;">
             </div>
         </div>
     </footer>
 
-    <div class="help-button">
+    <div class="help-btn">
         <span>?</span>
         <span>مساعدة</span>
     </div>
